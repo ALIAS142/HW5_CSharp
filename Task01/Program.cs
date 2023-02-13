@@ -2,10 +2,7 @@
 // Напишите программу, которая покажет количество чётных чисел в массиве.
 // [345, 897, 568, 234] -> 2
 
-
-int [] Array = GetArray(5, 100, 999);
-
-System.Console.WriteLine(String.Join(" ", Array));
+// 1. Метод вывода массива рандомного.
 
 int [] GetArray (int size, int minValue, int maxValue)
 {
@@ -16,3 +13,18 @@ int [] GetArray (int size, int minValue, int maxValue)
     }
     return res;
 }
+
+int [] EvenNumbers = GetArray (5, 100, 999);
+
+Console.WriteLine(String.Join(" ", EvenNumbers));
+
+// 2. Метод вычисления четных элементов.
+
+int count = 0;
+
+for (int i = 0; i < EvenNumbers.Length; i++)
+if (EvenNumbers[i] % 2 == 0)
+count++;
+
+Console.WriteLine($" -> {count}");
+
