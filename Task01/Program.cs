@@ -14,17 +14,27 @@ int [] GetArray (int size, int minValue, int maxValue)
     return res;
 }
 
-int [] EvenNumbers = GetArray (5, 100, 999);
-
-Console.WriteLine(String.Join(" ", EvenNumbers));
 
 // 2. Метод вычисления четных элементов.
 
+int CountEvenNumbers (int[] EvenNumbers)
+{
 int count = 0;
-
 for (int i = 0; i < EvenNumbers.Length; i++)
-if (EvenNumbers[i] % 2 == 0)
-count++;
+{
+    if (EvenNumbers[i] % 2 == 0)
+    {
+        count++;   
+    }
+}
+return count;
+}
 
-Console.WriteLine($" -> {count}");
+
+int[] EvenNumbers = GetArray(5, 100, 999);
+System.Console.WriteLine(String.Join(" ", EvenNumbers));
+System.Console.WriteLine($"{CountEvenNumbers(EvenNumbers)}");
+           
+
+
 
